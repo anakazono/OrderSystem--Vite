@@ -1,0 +1,176 @@
+.cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  user-select: none;
+}
+
+.cart > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.cartclose {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.cartclose::before, .cartclose::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  width: 4px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 1px;
+}
+
+.cartclose::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cartclose::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.cart ul {
+  display: block;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 50px;
+  height: calc(100% - 150px);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.cart ul li {
+  display: block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+}
+
+.cart ul li:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.cart ul li p {
+  margin: 0;
+  padding-left: 30px;
+}
+
+.delitem {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.delitem::before, .delitem::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 25px;
+  background-color: gray;
+  border-radius: 1px;
+}
+
+.delitem:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.delitem:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.innercart {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+}
+
+.cartprice {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90px;
+  line-height: 90px;
+  margin: 0;
+  padding-left: 40px;
+  font-size: 30px;
+}
+
+.cartorder {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  line-height: 60px;
+  margin: 0;
+  margin: 15px;
+  padding-right: 45px;
+  padding-left: 45px;
+  font-size: 30px;
+  background-color: #f7b46b;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.noitemincartorder {
+  background-color: lightgray;
+}
+
+.cartopen {
+  display: inline-block;
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+  height: 100px;
+  width: 100px;
+  background-color: #f7b46b;
+  z-index: 1;
+  border-radius: 50px;
+  box-shadow: 7px 7px #f7d76b;
+  cursor: pointer;
+}
+
+.noitemincart {
+  background-color: gray;
+  box-shadow: 7px 7px lightgray;
+}
+
+.cartopen img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+}

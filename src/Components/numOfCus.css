@@ -1,0 +1,52 @@
+.NumOfCus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 20px;
+  user-select: none;
+}
+
+.NumOfCus div {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.NumOfCus a:nth-child(odd), .message {
+  cursor: pointer;
+}
+
+.NumOfCus .button {
+  display: inline-block;
+  width: 66px;
+  height: 66px;
+  border: solid 2px black;
+  border-radius: 50%;
+  font-size: 35px;
+  text-align: center;
+  line-height: 66px;
+}
+
+.NumOfCus .ghostbutton {
+  opacity : 0.3;
+}
+
+.NumOfCus .num {
+  display: inline-block;
+  margin: 30px;
+  font-size: 50px;
+}
+
+.NumOfCus .message {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  border: dotted 2px black;
+  border-radius: 25px;
+}
