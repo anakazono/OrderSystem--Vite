@@ -2,11 +2,16 @@ import {useState} from "react"
 import "./item.css"
 import type { Order } from "../App.tsx"
 
-export default function Item({item, handleCart}){
+type ItemProps = {
+  item : Order
+  handleCart : (obj : Order)=>void
+}
+
+export default function Item({item, handleCart} : ItemProps){
   const [isPopup, setIsPopup] = useState<boolean>(false)
   const [numOfItems, setNumOfItems] = useState<number>(1)
 
-  const {url, name, price, sort} : Order = item
+  const {url, name, price} : Order = item
 
   return(
     <div className="item">

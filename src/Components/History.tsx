@@ -7,7 +7,8 @@ type HistoryProps = {
 }
 
 export default function History({orders, num} : HistoryProps){
-  const ordersPrices : number[] = orders.map((i) => i.price * i.numOfItems)
+  //@ts-ignore TS18048: 'i.numOfItems' is possibly undefined.
+  const ordersPrices : number[] = orders.map<number>((i : Order) => i.price * i.numOfItems)
   const iniVal : number = 0
   const sumOfOrdersPrices : number = ordersPrices.reduce((acc, curVal) => acc + curVal, iniVal)
 

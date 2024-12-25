@@ -2,10 +2,18 @@ import { useState } from "react"
 import "./cart.css"
 import type { Order } from "../App.tsx"
 
-export default function Cart({cart, removeCart, handleOrders, delFromCart}){
+type CartProps = {
+  cart : Order[] 
+  removeCart : ()=>void
+  handleOrders : (order : Order[])=>void
+  delFromCart : (num : number)=>void
+}
+
+export default function Cart({cart, removeCart, handleOrders, delFromCart} : CartProps){
   const [cartOpen, setCartOpen] = useState<boolean>(false)
 
-  const cartPrices : number[] = cart.map((i) => i.price * i.numOfItems)
+  //@ts-ignore TS18048: 'i.numOfItems' is possibly undefined.
+  const cartPrices : number[] = cart.map<number>((i : Order) => i.price * i.numOfItems)
   const initialValue : number = 0
   const sumOfCartPrices : number = cartPrices.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue)
 

@@ -1,12 +1,18 @@
 import { useState } from "react"
 import Item from "./Item.tsx"
 import "./menu.css"
+import type { Order } from "../App.tsx"
 import type { Sort } from "../App.tsx"
 
-export default function Menu({handleCart, itemsArray}){
+type MenuProps = {
+  handleCart : (obj : Order)=>void
+  itemsArray : Order[]
+}
+
+export default function Menu({handleCart, itemsArray} : MenuProps){
   const [sortOfItem, setSortOfItem] = useState<Sort | null>(null)
 
-  const allItems = itemsArray.map((i, n) => {
+  const allItems = itemsArray.map((i : Order, n : number) => {
     return(
       <li className="menuli" key={n}>
         <Item item={i} handleCart={handleCart}/>
@@ -14,7 +20,7 @@ export default function Menu({handleCart, itemsArray}){
     )
   })
   
-  const mainItems = itemsArray.map((i, n) => {
+  const mainItems = itemsArray.map((i : Order, n : number) => {
     if(i.sort === "MAIN"){
       return(
         <li className="menuli" key={n}>
@@ -24,7 +30,7 @@ export default function Menu({handleCart, itemsArray}){
     }
   })
 
-  const subItems = itemsArray.map((i, n) => {
+  const subItems = itemsArray.map((i : Order, n : number) => {
     if(i.sort === "SUB"){
       return(
         <li className="menuli" key={n}>
