@@ -1,6 +1,4 @@
 import "./numOfCus.css"
-//@ts-ignore TS6133: "Order" is declared but its value is never read.
-import type { Order } from "../App.tsx"
 
 type NumOfCusProps = {
   num : number

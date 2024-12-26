@@ -33,9 +33,9 @@ export default function Item({item, handleCart} : ItemProps){
             <a className="numofitems">
               <span onClick={
                 () => {
-                  (numOfItems - 1) 
-                  ? setNumOfItems(numOfItems - 1)
-                  : false
+                  if (numOfItems - 1)  {
+                    setNumOfItems(numOfItems - 1)
+                  }
                 }
               }>-</span>{numOfItems}
               <span onClick={() => setNumOfItems(numOfItems + 1)}>+</span>
