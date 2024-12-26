@@ -15,13 +15,6 @@ export type Order = {
   numOfItems? : number
 }
 
-//export type Items = {
-//  url : string
-//  name : string
-//  price : number
-//  sort : Sort
-//}
-
 type ScreenType = "MENU" | "HISTORY"
 
 export default function App(){
@@ -30,8 +23,7 @@ export default function App(){
   const [screen, setScreen] = useState<ScreenType>("MENU")
   const [cart, setCart] = useState<Order[]>([])
   const [orders, setOrders] = useState<Order[]>([])
-  //@ts-ignore TS6133: "setItemsArray" is declared but its value is never read.
-  const [itemsArray, setItemsArray] = useState<Order[]>([
+  const [itemsArray] = useState<Order[]>([
     {
       url : "../public/調理加工食品類_餃子_017_202mm_81g.png",
       name : "餃子",

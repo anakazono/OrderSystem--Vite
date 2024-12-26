@@ -12,12 +12,11 @@ type CartProps = {
 export default function Cart({cart, removeCart, handleOrders, delFromCart} : CartProps){
   const [cartOpen, setCartOpen] = useState<boolean>(false)
 
-  //@ts-ignore TS18048: 'i.numOfItems' is possibly undefined.
-  const cartPrices : number[] = cart.map<number>((i : Order) => i.price * i.numOfItems)
+  const cartPrices : number[] = cart.map<number>((i : Order) => i.price * (i.numOfItems ?? 0))
   const initialValue : number = 0
   const sumOfCartPrices : number = cartPrices.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue)
 
-  let cartItems = cart.map((i : Order, n : number) => {
+  const cartItems = cart.map((i : Order, n : number) => {
     return(
       <li key={n}><p>{i.name}{i.price}円 {i.numOfItems}個</p><span className="delitem" onClick={() => delFromCart(n)}></span></li>
     )
